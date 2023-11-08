@@ -1,0 +1,284 @@
+Assembly:
+deployment unit.can be disassembled.
+exe and config file for deployablity.
+code inside exe will be msil similar to byte code.
+>exe has meta data about the application.
+Global Assembly cache:
+A place where libraries are installed.
+
+ASP.NET --using C#,razer,Html
+
+
+ASP.NET
+
+Pattern: Best solution to a recurring problem.
+System Architecture 
+software pattern(2) : architectural and design pattern.
+Types of design patterns: Creational(object creational),Structural(object interaction),Behavioural(invoking methods)
+Microsoft uses Patterns as part of the ASP.NET Framework.
+
+EXAMPLE: MODEL VIEW CONTROL ARCHITECTURAL PATTERN
+
+LIST OF PATTERNS :
+
+Creational Pattern : Factory method
+		     Abstract Factory
+		     Builder
+		     Singleton
+		     Prototype
+
+Structural Pattern : Proxy
+		     Adapter
+		     Facade
+		     FlyWait
+		     Composite
+		     Broker
+		     Decorator
+
+Behavioural Pattern :Command Object
+		     Chain of Responsibilities
+		     Momento
+   		     Mediator
+		     Observer
+		     Template Method
+		     State
+		     Stratergy
+		     Little Language
+		     Visitor
+	  	     Iterator
+
+Dependency Injection(DI) or Inversion of Control(IOC): A pattern that doesnt come under the above pattern types.The external environment will tell the entity what to do and when to do at runtime.
+
+ASP.NET applications run in a container (WebServer).The web server(IIS Internet Information Service) is a executable file.
+
+Web Framework======>ASP.NET
+.NET Platform======>.NET CORE
+Operating System===> Linux/Windows
+
+The Container is know as Kestral Webserver,where the ASP.NET code runs.
+WEB APPLICATION : C#,Logging,Static files
+
+
+HTML:
+An element is like a class that has fields,It goes by the name head,body,div etc.
+https://developer.mozilla.org/en-US/docs/Web/HTML
+
+The html Doc must be well formed.Consists of Three parts : Header-Body(optional)-Attachment(optional)
+Http Methods : Different types for ways data is transfered from the browser (get-post-put-delete-trace-option-patch)
+Https needed for more seecure transfer of data.
+
+Types of elements:
+Element only element (eg) HTML Head Body; it has nested elements where each child is element on their own.
+Empty Element (eg) IMG; An element that closes by itself(self closing).
+Text only Element (eg) Anchor,div,H1,H1;An  element whose child is only text.
+Mixed Elements ; can have text and elements as childs
+
+ASP.NET Web Applications:(Not MVC)
+
+Browser ---(Http Request)--> PageModel Code File-->CsHtml--(Http Restonse)-->Browser
+
+ASP.NET MVC Web Applications:
+
+Browser-->Controller-->View 1 (cshtml),view 2 (cshtml)
+
+MVC architecture: It seperates an application into three main components: 1.Model 2.View 3.Controller
+
+		Model --(Http Request)--> Controller---->View--(Http Response)-->Model
+
+
+Browser---->WebApplication---->View Controler---->Business Controller--<<model>>-->EF Object Relational Mapping---->RDBMS
+
+
+Browser----> Controller---->BusinessLogic---->Repository---->Stream---->File
+		||				|
+		||				------>Entity---->view---->Browser<HTML>
+		||						   |
+		----------------------------------------------------
+
+DBMS:
+
+View is used to encapsulate a table.
+A set of files is considered a dbms.
+Cursor-2 dimensional temporary memory.
+
+SQL----ANSI Standard query language.
+MS sql server has 4 important Databases: Master(Data dictionary consists of meta-data tables),Model(Template Database -A new database ll always be a clone of model Database),msdb(Store Jobs),tempdb(Temporary memory- All modifications are done in tempdb).
+
+Database--->Views<---------------Procedure
+    |				     |
+    |				     |
+   TABLES<----------------------------{Rules,UDDs,Defaults}
+    |	|
+    |	{Triggers}
+ {Indexes,Constraints}     
+
+Rules : Conditions and constraints.
+UDD: User defined data 
+
+DCL(Data Control Language)-grant/revoke permissions,DML(Data Manipulation Language)-Insert/Update/Delete/Select,DDL(Data Definition Language)- objects are created/destroyed/Modified(Create\drop\alter) 
+
+Syntax:
+CREATE TABLES table_name
+(
+column1 datatype[NULL|NOT NULL],
+column2	datatype[NULL|NOTNULL],
+......................
+)
+
+T(Transactional)-SQL-MS SQL
+PSQL-Oracle SQL
+
+INSERT INTO C1,C2,C3,C4;
+
+TSQL == 4th Generational Language.
+Before SQL , PRO C was used.
+Between Will be Faster when compared to And performance wise.
+
+
+Wild Characters:
+_ : Matches any single char
+% : Matches a string of one or more characters
+[]: Matches any single Character Within the Specified range
+[^]Matches any single character not within in the specified range
+
+1List CategoryNAme And description from the categories table sorted by CAtegory NAme
+2display ContactName companyName ContactTitle and Phone From Customer Table sorted by phone
+3Create a query dhowing employees first and last names and hiredaates sorted from newest to oldest employee
+4Create a query showing orders sorted by freight from most expensive to cheapest.show OrderID,OrderDate,ShippedDate,CustomerID and Freight.
+5SelectCompanyName,Fax,Phone,Homepage and Country from the suppliers table orted by country in descending order and then by companyname in ascending order
+6Create a list of employees showing Title,firstname and lastname.sort by title in ascending order and then by lastname in descending order
+
+Bottom-up approach: db-->Dataaccesslayer-->UI
+
+
+Browser --> Controller-->Repository--> EF Core-->RDBMS
+		|	      |		  |	
+		---------[ENTITY]----------
+
+Microsoft.EntityFrameWorkCore.SqlServer
+Microsoft.EntityFrameWorkCore.Design
+Microsoft.EntityFrameWorkCore.Tools
+dotnet tool install --global dotnet-ef
+
+
+ENTITY FRAMEWORK:
+
+Introduction:
+
+Entity framework is an object relational mapper(orm).
+It takes the structure of the database and turns it into objects that the .NET framework can understand.
+These objects aare used to interact with the database instead of interacting with the database directly.
+It can perform CRUD(create update Delete) operations as well as create tables and functions on the database.
+
+Unattached entity : Not Bound to database so the value is not saved
+Attached entity : Bound to Database
+
+
+				Entity Framework Diagram
+
+ --->[Unattached entity]    |      DBContext   |
+ |		|	    |       [DBSets]   |
+[Client] -->[Business ]---->|                  |------>RDBMS
+			    |	   [Database]  |
+			    | [DbChangeTracker]|
+                            |[DbContext        |
+			    |	Configuration] |
+
+Entity Framework Architecture:
+ 	
+	EDM		LINQ to Entities 	Entity Sql
+[Conceptual Model]                 ObjectServices        
+[Mapping]                  Entity Client Data Provider
+[Storage model]			ADO.NET Data Provider
+				     [DATABASE]
+
+Class Library :
+System.Data.Entity
+System.Data.Entity.Infrastructure
+
+DB context :
+ A Db context instance represents a combination of the unit of work.
+ it can be used to query from a database and group together changes that can be then written back to the storeas a unit.
+ Properties : Configuration, Database.
+ Methods : Entry<TEntity>(TEntity),Set<TEntity>(),GetValidationErrors(),SaveChanges(),SaveChangesAsync().
+
+
+REST API:
+
+ASP.NET web API allows For displaying the data in various formats such as xml and json.
+
+Difference between MVC and WEB API:
+
+Use the MVC for developing the web application that replies as both data and view.
+The Web API is used for generating the HTTP services that replies only as data.
+In the Web API the request performs tracing with the actions depending on the HTTP services but the MVC request performs tracing with the action name. 
+The web api returns the data in various formats such as JSON XML and other format based on the accept header of the request.
+The Web API supports content negotiation, self hosting. All these are not supported by the MVC.
+
+To make a dettached entity an attached entity:
+Update,Add 
+
+Entity State : 
+Dettached = 0
+unchanged = 1
+deleted = 2
+Added = 3
+Modified = 4
+
+
+Transient Data = Dettached , Short time Stay (Marked for deletion)
+Durable data = Stays forever,Attached
+
+The dbcontext creates query based on the entity state
+
+Entity state Diagram Gives the state of the entity : 
+
+
+
+				                                DB Context
+			     ----------------------------------------------------------------------
+		   Add()     |		    SaveChanges()                                         |                
+		------------>| <<Added>>    -------------> <<Unchanged>>  ------------            |
+<<Dettached>>	  Update()   |              SaveChanges()                            |   Load()   |            ----------
+   Entity	------------>| <<Modified>> <-------------> <<Unchanged>> ----------------------> |----------->|Database|
+		  Remove()   |              SaveChanges()                            |            |            ----------
+		------------>| <<Deleted>>  <------------- <<Unchanged>> -------------            | 
+                             |                                                                    |
+                             ----------------------------------------------------------------------
+
+
+"Data Concurrecy Violation" , "Transaction Boundaries" , "Isolation Levels"
+Questions:
+
+1.Principle of OOPS: Explain with short notes - in,Ab,Poly,en,+Modularity
+2.Differences between Abstract classes and interfaces, When to use an interface and an abstract class
+3.Why are interfaces called as contracts?
+4.What are null interfaces?
+
+
+Clients For Web API:
+
+JS Event Loops
+
+Asynchronous call on a remote object
+Synchronous call on a remote object
+Synchronous call on a Self
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

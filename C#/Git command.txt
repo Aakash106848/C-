@@ -1,0 +1,15 @@
+git clone https://github.com/Aakash106848/WorldCup2023.git
+git clone https://github.com/Aakash106848/TimePass.git
+git status - To know the current status of the repository
+git add . - To Add New Files To The Repository
+git commit -m "xyz" - To commit all changes to the repository
+git push - To upload new and modified files to the Cloud Repository from Local Repository
+git init - Hidden folder for git is created
+git branch -M main - Add main 
+add remote repository to the local repository:
+git remote add origin https://github.com/Aakash106848/CSharp-Lessons.git
+
+Verify remote Repository :
+git remote -v
+push the local repository :
+git command -u origin main
